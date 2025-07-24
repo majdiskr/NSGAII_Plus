@@ -7,6 +7,15 @@ someFactor = 10;                    % Population size adjustment factor
 w_delay = 0.4;                      % Weight for delay
 w_energy = 0.6;                     % Weight for energy
 
+% Generate task parameters (using your ranges)
+taskWorkload = randi([1, 20], 1, numTasks);       % 1-20 MIPS
+taskDeadline = randi([5, 50], 1, numTasks);       % 5-50 seconds
+taskStorage = randi([1, 4], 1, numTasks);         % 1-4 GB
+
+% Generate vehicle parameters (using your ranges)
+storageCapacity = randi([1, 16], 1, numVehicles); % 1-16 GB
+computingCapacity = randi([5, 30], 1, numVehicles); % 5-30 MIPS
+
 % Predefine result storage
 results = struct();
 
